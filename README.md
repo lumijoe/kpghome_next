@@ -62,3 +62,37 @@ kpghome_next/
 │       ├── AddExpenseModal.js
 │       └── AddExpenseModal.module.scss
 └── _original/              # 既存CSS参照用
+
+
+
+
+my-kakeibo-app/
+├── app/
+│   ├── api/                    # API Routes (バックエンド)
+│   │   ├── expenses/
+│   │   │   ├── route.js        # GET, POST /api/expenses
+│   │   │   └── [id]/
+│   │   │       └── route.js    # GET, PUT, DELETE /api/expenses/[id]
+│   │   ├── categories/
+│   │   │   └── route.js        # GET /api/categories
+│   │   └── summary/
+│   │       └── route.js        # GET /api/summary (月次集計など)
+│   ├── expenses/               # 支出管理ページ
+│   │   ├── page.js             # 支出一覧ページ
+│   │   ├── add/
+│   │   │   └── page.js         # 支出追加ページ
+│   │   └── [id]/
+│   │       └── page.js         # 支出詳細・編集ページ
+│   ├── dashboard/              # ダッシュボード
+│   │   └── page.js             # 家計簿サマリー
+│   ├── components/             # 共通コンポーネント
+│   │   ├── ExpenseForm.js      # 支出入力フォーム
+│   │   ├── ExpenseList.js      # 支出一覧
+│   │   └── Summary.js          # 月次サマリー
+│   ├── layout.js               # 全体レイアウト
+│   └── page.js                 # ホームページ
+├── lib/
+│   ├── data.js                 # データ管理（一時的にメモリ保存）
+│   └── utils.js                # ユーティリティ関数
+├── package.json
+└── next.config.js
