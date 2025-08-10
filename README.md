@@ -35,3 +35,30 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # kpghome_next
+
+
+# ディレクトリ参考
+kpghome_next/
+├── app/
+│   ├── layout.js
+│   ├── page.js
+│   └── page.module.scss    # ページ固有のスタイル
+├── styles/                  # グローバルなSCSS
+│   ├── globals.scss        # メインのグローバルスタイル
+│   ├── variables.scss      # 変数定義
+│   ├── mixins.scss        # ミックスイン
+│   ├── components/        # コンポーネント用SCSS
+│   │   ├── budget.scss
+│   │   ├── modal.scss
+│   │   └── button.scss
+│   └── layouts/           # レイアウト用SCSS
+│       ├── header.scss
+│       └── footer.scss
+├── components/
+│   ├── budget/
+│   │   ├── BudgetTable.js
+│   │   └── BudgetTable.module.scss  # コンポーネント固有
+│   └── modals/
+│       ├── AddExpenseModal.js
+│       └── AddExpenseModal.module.scss
+└── _original/              # 既存CSS参照用
