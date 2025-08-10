@@ -96,3 +96,59 @@ my-kakeibo-app/
 │   └── utils.js                # ユーティリティ関数
 ├── package.json
 └── next.config.js
+
+<!-- 案03 -->
+budget-manager/                 # プロジェクト名
+├── app/
+│   ├── api/                    # API Routes (バックエンド)
+│   │   ├── expenses/
+│   │   │   ├── route.js        # GET, POST /api/expenses
+│   │   │   └── [id]/
+│   │   │       └── route.js    # PUT, DELETE /api/expenses/[id]
+│   │   ├── income/
+│   │   │   ├── route.js        # GET, POST /api/income
+│   │   │   └── [id]/
+│   │   │       └── route.js    # PUT, DELETE /api/income/[id]
+│   │   ├── budget/
+│   │   │   ├── route.js        # GET /api/budget (全年度データ)
+│   │   │   └── summary/
+│   │   │       └── route.js    # GET /api/budget/summary (月次集計)
+│   │   └── categories/
+│   │       └── route.js        # GET /api/categories (支出カテゴリ)
+│   ├── budget/                 # メインページディレクトリ
+│   │   └── page.js             # 予備費管理メインページ
+│   ├── components/             # 共通コンポーネント
+│   │   ├── layout/
+│   │   │   ├── Header.js       # ヘッダーコンポーネント
+│   │   │   └── Navigation.js   # モバイルナビゲーション
+│   │   ├── budget/
+│   │   │   ├── BudgetTable.js      # デスクトップ版テーブル
+│   │   │   ├── MobileBudgetView.js # モバイル版ビュー
+│   │   │   ├── MonthGroup.js       # 3ヶ月グループコンポーネント
+│   │   │   └── BudgetRow.js        # 予算行コンポーネント
+│   │   ├── modal/
+│   │   │   ├── AddExpenseModal.js  # 支出追加モーダル
+│   │   │   ├── AddIncomeModal.js   # 収入追加モーダル
+│   │   │   └── ModalTabs.js        # モーダルタブ
+│   │   └── ui/
+│   │       ├── Button.js           # 再利用可能ボタン
+│   │       ├── FormInput.js        # フォーム入力コンポーネント
+│   │       └── SwipeContainer.js   # スワイプ機能
+│   ├── styles/                 # スタイル
+│   │   ├── globals.css         # グローバルスタイル
+│   │   ├── budget.css          # 予算管理専用スタイル
+│   │   └── modal.css           # モーダル専用スタイル
+│   ├── hooks/                  # カスタムフック
+│   │   ├── useBudgetData.js    # 予算データ管理
+│   │   ├── useSwipeNavigation.js # スワイプナビゲーション
+│   │   └── useModal.js         # モーダル状態管理
+│   ├── lib/                    # ユーティリティ
+│   │   ├── budgetData.js       # データ管理（一時的）
+│   │   ├── dateUtils.js        # 日付ユーティリティ
+│   │   └── formatters.js       # 金額フォーマット等
+│   ├── layout.js               # 全体レイアウト
+│   └── page.js                 # ホームページ (リダイレクト用)
+├── public/
+│   └── icons/                  # アイコン画像
+├── package.json
+└── next.config.js
